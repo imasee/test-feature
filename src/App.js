@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-
+  Link
 } from "react-router-dom";
 
 function TouchView({ tech }) {
@@ -90,6 +90,11 @@ export default function App() {
   return (
     <div className="App">
       <Router>
+        <div>
+          <Link to="/">Home</Link>{" "}
+          <Link to="/med">MediaQueriey</Link>{" "}
+          <Link to="/mod">Modernizr</Link>
+        </div>
         <Switch>
           <Route exact path="/">
             <p className="page" style={{ color: "black" }}>{JSON.stringify(window.Modernizr)}</p>
