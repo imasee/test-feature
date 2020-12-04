@@ -91,9 +91,15 @@ export default function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" component={() => (<p className="page" style={{ color: "black" }}>{JSON.stringify(window.Modernizr)}</p>)} />
-          <Route path={["/med"]} component={WithMediaQueries} />
-          <Route path={["/mod"]} component={WithModernizr} />
+          <Route exact path="/">
+            <p className="page" style={{ color: "black" }}>{JSON.stringify(window.Modernizr)}</p>
+          </Route>
+          <Route path="/med" >
+            <WithMediaQueries />
+          </Route>
+          <Route path="/mod" >
+            < WithModernizr />
+          </Route>
         </Switch>
       </Router>
     </div>
