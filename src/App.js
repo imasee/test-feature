@@ -1,23 +1,29 @@
 import React, { Fragment } from "react";
 import "./styles.css";
 import Media from "react-media";
-import { Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
 
+} from "react-router-dom";
 
-function TouchView() {
+function TouchView({ tech }) {
   return (
     <div className="page touch">
       <h1>Touch View</h1>
       <p>Have touch feature</p>
+      <p>{`{${tech}}`}</p>
     </div>
   )
 }
 
-function DefaultView() {
+function DefaultView({ tech }) {
   return (
     <div className="page def">
       <h1>Default View</h1>
       <p>Have pointer feature</p>
+      <p>{`{${tech}}`}</p>
     </div>
   )
 }
@@ -51,7 +57,7 @@ function WithMediaQueries() {
 
 
         return <Fragment>
-          <View />
+          <View tech="MediaQuery" />
         </Fragment>
       }}
     </Media>
@@ -73,7 +79,7 @@ function WithModernizr() {
     }
   }
   return (
-    <View />
+    <View tech="Modernizr" />
   )
 }
 
@@ -83,10 +89,12 @@ export default function App() {
 
   return (
     <div className="App">
-      <Switch>
-        <Route path="/" component={WithMediaQueries} />
-        <Route path="/mod" component={WithModernizr} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path={["/"]} component={WithMediaQueries} />
+          <Route path={"/mod"} component={WithModernizr} />
+        </Switch>
+      </Router>
     </div>
   );
 }
