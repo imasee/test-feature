@@ -8,8 +8,11 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "array.prototype.fill": "^1.0.2",
+    "core-js": "^3.8.0",
     "modernizr": "^3.11.4",
     "react": "17.0.0",
+    "react-app-polyfill": "^2.0.0",
     "react-dom": "17.0.0",
     "react-media": "1.10.0",
     "react-router-dom": "^5.2.0",

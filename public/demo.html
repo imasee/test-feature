@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Demo, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Demo</h1>
+    <script>
+        window.onload = () => {
+            if (Modernizr.touchevents) {
+                // supported
+                alert("has touch");
+            } else {
+                // not-supported
+                alert("no touch");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
